@@ -11,6 +11,12 @@ get '/' do
   erb :index
 end
 
+get '/ask' do
+  @test = "Q1"
+  @text = "これが質問やで"*10
+  erb :ask
+end
+
 post '/create' do
   Item.create({
     title: params[:title],
